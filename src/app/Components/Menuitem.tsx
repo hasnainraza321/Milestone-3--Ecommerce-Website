@@ -1,21 +1,37 @@
 "use client";
 import { useState, useEffect } from "react";
 import ProductCard from "./Productcard";
-import { Product } from "@/pages/types";
+import { Product } from "@/app/types/types";
 
 const Menu = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [cart, setCart] = useState<Product[]>([]);
   const [showCart, setShowCart] = useState(false);
   const [isCheckout, setIsCheckout] = useState(false);
-//   const router = useRouter();
 
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch("/api/products");
-      const data = await response.json();
-      setProducts(data);
+      try {
+        const response = await fetch("/api/products");
+
+        // Check if the response is OK (status code 200-299)
+        if (!response.ok) {
+          throw new Error("Failed to fetch products");
+        }
+
+        // Check if the response is in JSON format
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          const data = await response.json();
+          setProducts(data);
+        } else {
+          throw new Error("Expected JSON response");
+        }
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     }
+
     fetchProducts();
 
     const savedCart = localStorage.getItem("cart");

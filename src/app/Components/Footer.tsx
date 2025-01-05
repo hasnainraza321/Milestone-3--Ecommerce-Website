@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className='flex flex-col space-y-10 justify-center m-10 mb-0'>
       <nav
@@ -70,3 +70,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;

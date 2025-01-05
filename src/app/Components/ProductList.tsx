@@ -28,7 +28,7 @@ const products = [
   },
 ];
 
-export default function ProductList() {
+  const ProductList = () => {
   return (
     <div className="p-4 flex flex-wrap items-center justify-center">
       {products.map((product) => (
@@ -62,3 +62,4 @@ export default function ProductList() {
     </div>
   );
 }
+export default ProductList;

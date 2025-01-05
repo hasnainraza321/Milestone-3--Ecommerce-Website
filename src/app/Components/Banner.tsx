@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Banner() {
+const Banner: React.FC = () => {
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-black to-gray-700 font-sans px-6 py-12 mb-7">
       {/* Background Image */}
@@ -8,7 +8,7 @@ export default function Banner() {
         <img
           src="/images/banner.png"
           alt="Pizza and promotional banner"
-           className="w-full h-full object-cover"
+          className="w-full h-full object-cover"
         />
       </div>
 
@@ -22,10 +22,13 @@ export default function Banner() {
         </p>
         <button
           type="button"
-          className="bg-yellow-500 text-black font-bold py-3 px-6 rounded-full shadow-lg hover:bg-orange-600 transition duration-300">
+          className="bg-yellow-500 text-black font-bold py-3 px-6 rounded-full shadow-lg hover:bg-orange-600 transition duration-300"
+        >
           Exciting Deals at 12 PM!
         </button>
       </div>
     </div>
   );
 }
+
+export default Banner;

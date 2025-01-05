@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Carousel() {
+const Carousel = () => {
   return (
     <div>
-      <section className="bg-gradient-to-r from-black to-gray-700">
+      <section className="bg-gradient-to-r from-black to-blue-950">
         <div className="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
           <div className="grid grid-cols-3 gap-4 h-full">
             {/* Larger Image */}
@@ -100,3 +100,5 @@ export default function Carousel() {
     </div>
   );
 }
+
+export default Carousel;

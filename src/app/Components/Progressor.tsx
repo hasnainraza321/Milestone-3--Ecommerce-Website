@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Progressor() {
+const Progressor = () => {
   return (
     <div>
       <div className='flex items-start max-w-screen-lg w-full mx-auto mt-10 mb-10'>
@@ -47,3 +47,4 @@ export default function Progressor() {
     </div>
   )
 }
+export default Progressor;
